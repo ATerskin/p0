@@ -38,21 +38,42 @@ def process_message(message):
     """Process and respond to a message."""
     global LAST_MESSAGE_ID
     text = message["text"].lower()
+    sender = message["sender_type"]
 
-    # i.e. responding to a specific message (note that this checks if "hello bot" is anywhere in the message, not just the beginning)
-    if "hello bot" in text:
-        send_message("sup")
+    user_id = message["sender_id"]
+
+    if user_id == "34160808":
+        # i.e. responding to a specific message (note that this checks if "hello bot" is anywhere in the message, not just the beginning)
+        if "hello bot" in text:
+            send_message("sup")
+
+    if sender != "bot":
+        if "good morning" in text:
+            send_message("Have a terrific morning KITTEN!!")
+        if "good night" in text:
+            send_message("Get some good sleep Kitten!")
 
     LAST_MESSAGE_ID = message["id"]
 
 
 def main():
     global LAST_MESSAGE_ID
+
+    group_message = get_group_messages()
+    recent_message = None
+
+    if group_message and len(group_message) > 0:
+        recent_message = group_message[0]['id']
+
+    # curl
     # this is an infinite loop that will try to read (potentially) new messages every 10 seconds, but you can change this to run only once or whatever you want
     while True:
-        messages = get_group_messages(LAST_MESSAGE_ID)
-        for message in reversed(messages):
-            process_message(message)
+        messages = get_group_messages(recent_message)
+        if messages:
+            for message in reversed(messages):
+                process_message(message)
+
+            recent_message = messages[0]['id']
         time.sleep(10)
 
 
