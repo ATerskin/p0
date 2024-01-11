@@ -2,6 +2,7 @@ import requests
 import time
 import json
 import os
+import re
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -9,13 +10,15 @@ load_dotenv()
 BOT_ID = os.getenv("BOT_ID")
 GROUP_ID = os.getenv("GROUP_ID")
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+USER_ID = os.getenv("USER_ID")
 LAST_MESSAGE_ID = None
 
 
-def send_message(text, attachments=None):
+def send_message(text="", attachments=None):
     """Send a message to the group using the bot."""
     post_url = "https://api.groupme.com/v3/bots/post"
     data = {"bot_id": BOT_ID, "text": text, "attachments": attachments or []}
+
     response = requests.post(post_url, json=data)
     return response.status_code == 202
 
@@ -42,10 +45,18 @@ def process_message(message):
 
     user_id = message["sender_id"]
 
-    if user_id == "34160808":
+    if user_id == USER_ID:
         # i.e. responding to a specific message (note that this checks if "hello bot" is anywhere in the message, not just the beginning)
         if "hello bot" in text:
             send_message("sup")
+
+        if "do math" in text:
+            print("YYYYYYY")
+            expression = text[len("Do math"):].strip()
+            print(f"Evaluating expression: {expression}")
+
+            result = eval(expression)
+            send_message(f"SOLUTION: {result}")
 
     if sender != "bot":
         if "good morning" in text:
@@ -54,6 +65,23 @@ def process_message(message):
             send_message("Get some good sleep Kitten!")
 
     LAST_MESSAGE_ID = message["id"]
+
+
+# def solution(expr):
+#     print(expr)
+#     return bool(re.fullmatch(r"[\d+\-*/.() ]+", expr))
+
+
+def get_meme(api_key):
+    url = "https://api.giphy.com/v1/gifs/random"
+    params = {"api_key": api_key, "tag": "meme", "rating": "g"}
+    response = requests.get(url, params=params)
+
+    print("Response::::", response.json()['data']['images']['original']['url'])
+    if response.status_code == 200:
+        return response.json()['data']['images']['original']['url']
+    else:
+        return None
 
 
 def main():
@@ -69,6 +97,8 @@ def main():
     # this is an infinite loop that will try to read (potentially) new messages every 10 seconds, but you can change this to run only once or whatever you want
     while True:
         messages = get_group_messages(recent_message)
+        # print("MESSAGES")
+        # print(messages)
         if messages:
             for message in reversed(messages):
                 process_message(message)
