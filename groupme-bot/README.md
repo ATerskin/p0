@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Have Python installed
+1. Have Python3 installed
 2. Have a GroupMe account
 3. Drop an instance of a GroupMe bot following this API page: https://dev.groupme.com/tutorials/bots
    - **QUICK HINT** Use this curl command to drop a bot into a GroupMe Group of your choice:
@@ -11,12 +11,13 @@
    ```
    - Access token can be found in the link above ^
 4. Create a .env file with this template:
-```bash
-BOT_ID=""
-GROUP_ID="" 
-ACCESS_TOKEN=""
-USER_ID=""
-```
+   
+  ```bash
+  BOT_ID=""
+  GROUP_ID="" 
+  ACCESS_TOKEN=""
+  USER_ID=""
+  ```
 
 ## How To Use
 
