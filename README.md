@@ -10,7 +10,7 @@
 ## Setup
 
 1. Have Python3 installed
-2. Have a GroupMe account
+2. Have a [GroupMe](https://groupme.com/en-US/) account
 3. Drop an instance of a GroupMe bot following this API page: https://dev.groupme.com/tutorials/bots
    - **QUICK HINT** Use this curl command to drop a bot into a GroupMe Group of your choice:
    ```
