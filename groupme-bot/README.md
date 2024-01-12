@@ -1,6 +1,6 @@
-# Alex Terskin: GroupMe Bot With Math Functionality
+# GroupMe Bot With Math Functionality
 
-## How-To Use
+## Setup
 
 1. Have Python installed
 2. Have a GroupMe account
@@ -10,8 +10,15 @@
    curl -X POST -d '{"bot": { "name": "(YOUR BOT'S NAME", "group_id": "(GROUP_ID TO ADD"}}' -H 'Content-Type: application/json' "https://api.groupme.com/v3/bots?token=(YOUR ACCESS TOKEN)"
    ```
    - Access token can be found in the link above ^
+4. Create a .env file with this template:
+  -```bash
+BOT_ID=""
+GROUP_ID="" 
+ACCESS_TOKEN=""
+USER_ID=""
+```
 
-## Setup
+## How To Use
 
 1. Fork te repo to your own account
     - on this repo, click the fork button in the top right
