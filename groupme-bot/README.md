@@ -29,22 +29,22 @@
 ## How To Run
 
 ```bash
-**# STEP 1:**
+# STEP 1:
 # WITHIN THE p0 FOLDER
 # create virtual environment (this creates a folder called venv)
 python3 -m venv venv
 
-**# STEP 2:**
+# STEP 2:
 # cd into groupme-bot folder
 # activate virtual environment
 source venv/bin/activate # for mac/linux
 venv\Scripts\activate # for windows
 
-**# STEP 3:**
+# STEP 3:
 # install dependencies
 pip install -r requirements.txt
 
-**# STEP 4: **
+# STEP 4:
 # run the bot.py program
 python3 bot.py
 
