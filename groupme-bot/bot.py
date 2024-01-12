@@ -75,7 +75,6 @@ def main():
     if group_message and len(group_message) > 0:
         recent_message = group_message[0]['id']
 
-    # curl
     # this is an infinite loop that will try to read (potentially) new messages every 10 seconds, but you can change this to run only once or whatever you want
     while True:
         messages = get_group_messages(recent_message)
