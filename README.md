@@ -18,7 +18,7 @@
    'Content-Type: application/json' "https://api.groupme.com/v3/bots?token=(YOUR ACCESS TOKEN)"
    ```
    - Access token can be found in the link above ^
-4. Create a .env file with this template and fill out the corresponding fields:
+4. Create a .env file with this template inside the "groupme-bot" folder and fill out the corresponding fields:
    ```bash
    BOT_ID=""
    GROUP_ID="" 
