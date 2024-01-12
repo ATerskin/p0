@@ -24,7 +24,6 @@ def send_message(text="", attachments=None):
 
 
 def get_group_messages(since_id=None):
-    """Retrieve recent messages from the group."""
     params = {"token": ACCESS_TOKEN}
     if since_id:
         params["since_id"] = since_id
