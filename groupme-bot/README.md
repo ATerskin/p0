@@ -7,7 +7,8 @@
 3. Drop an instance of a GroupMe bot following this API page: https://dev.groupme.com/tutorials/bots
    - **QUICK HINT** Use this curl command to drop a bot into a GroupMe Group of your choice:
    ```
-   curl -X POST -d '{"bot": { "name": "(YOUR BOT'S NAME", "group_id": "(GROUP_ID TO ADD"}}' -H 'Content-Type: application/json' "https://api.groupme.com/v3/bots?token=(YOUR ACCESS TOKEN)"
+   curl -X POST -d '{"bot": { "name": "(YOUR BOT'S NAME", "group_id": "(GROUP_ID TO ADD"}}' -H
+   'Content-Type: application/json' "https://api.groupme.com/v3/bots?token=(YOUR ACCESS TOKEN)"
    ```
    - Access token can be found in the link above ^
 4. Create a .env file with this template:
