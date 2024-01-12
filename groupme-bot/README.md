@@ -1,5 +1,12 @@
 # GroupMe Bot With Math Functionality
 
+## Functionality
+1. The bot can reply to you and only you if you enter "Hello bot"
+2. The bot can respond to other HUMAN users and to you if somebody says "Good morning" or "Good night"
+3. The bot can solve basic arithmitic expressions by entering the command "Do math (expr)" followed by an arithemitic expression 
+   - i.e: "Do math 4 % 2
+   - i.e: "Do math 5*2-1/9*100
+
 ## Setup
 
 1. Have Python3 installed
@@ -11,7 +18,7 @@
    'Content-Type: application/json' "https://api.groupme.com/v3/bots?token=(YOUR ACCESS TOKEN)"
    ```
    - Access token can be found in the link above ^
-4. Create a .env file with this template:
+4. Create a .env file with this template and fill out the corresponding fields:
    ```bash
    BOT_ID=""
    GROUP_ID="" 
