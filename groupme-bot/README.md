@@ -3,9 +3,9 @@
 ## Functionality
 1. The bot can reply to you and only you if you enter "Hello bot"
 2. The bot can respond to other HUMAN users and to you if somebody says "Good morning" or "Good night"
-3. The bot can solve basic arithmitic expressions by entering the command "Do math (expr)" followed by an arithemitic expression 
-   - i.e: "Do math 4 % 2
-   - i.e: "Do math 5*2-1/9*100
+3. The bot can solve basic arithmitic expressions by entering the command "Do math (expression)"
+   - i.e: "Do math 4%2
+   - i.e: "Do math 5x2-1/9x100
 
 ## Setup
 
