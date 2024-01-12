@@ -1,20 +1,15 @@
-# P0: GroupMe Bot
+# Alex Terskin: GroupMe Bot With Math Functionality
 
-## Due: uhhh, last day of classes?
+## How-To Use
 
-## Overview
-
-- create a GroupMe bot that will be able to read/respond to messages in a GroupMe chat
-
-## Pre-Requisites
-
-- `python3` installed
-  - see [here](https://www.python.org/downloads/) for download
-- GroupMe:
-  - account, sign up [here](https://groupme.com/en-US/register)
-  - bot, see how to create one [here](https://dev.groupme.com/tutorials/bots)
-    - you'll need an access token, it's basically just top right of the dev page
-  - class GroupMe, join [here](https://groupme.com/join_group/98324520/GpX1Owv6)
+1. Have Python installed
+2. Have a GroupMe account
+3. Drop an instance of a GroupMe bot following this API page: https://dev.groupme.com/tutorials/bots
+   - **QUICK HINT** Use this curl command to drop a bot into a GroupMe Group of your choice:
+   ```
+   curl -X POST -d '{"bot": { "name": "(YOUR BOT'S NAME", "group_id": "(GROUP_ID TO ADD"}}' -H 'Content-Type: application/json' "https://api.groupme.com/v3/bots?token=(YOUR ACCESS TOKEN)"
+   ```
+   - Access token can be found in the link above ^
 
 ## Setup
 
