@@ -26,12 +26,27 @@
    USER_ID=""
    ```
 
-## How To Use
+## How To Run
 
-1. Fork te repo to your own account
-    - on this repo, click the fork button in the top right
-    - ensure that when you fork, it is public, otherwise we won't be able to see your submission
-2. Set up your `.env` file based on your GroupMe information. You just create a file called `.env` to represent your environment variables. Here is a template for your `.env` file:
+```bash
+**# STEP 1:**
+# WITHIN THE p0 FOLDER
+# create virtual environment (this creates a folder called venv)
+python3 -m venv venv
+
+**# STEP 2:**
+# cd into groupme-bot folder
+# activate virtual environment
+source venv/bin/activate # for mac/linux
+venv\Scripts\activate # for windows
+
+**# STEP 3:**
+# install dependencies
+pip install -r requirements.txt
+
+**# STEP 4: **
+# run the bot.py program
+python3 bot.py
 
 ```bash
 BOT_ID=""
