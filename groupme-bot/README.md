@@ -20,10 +20,10 @@
    - Access token can be found in the link above ^
 4. Create a .env file with this template and fill out the corresponding fields:
    ```bash
-   BOT_ID=""
-   GROUP_ID="" 
-   ACCESS_TOKEN=""
-   USER_ID=""
+   BOT_ID=""       # YOUR bot's ID in the group
+   GROUP_ID=""     # Groups's id
+   ACCESS_TOKEN="" # YOUR access token
+   USER_ID=""      # YOUR personal GroupMe user_id. Needed so that the bot only responds to you in specific cases
    ```
 
 ## How To Run
