@@ -42,7 +42,6 @@ def process_message(message):
     global LAST_MESSAGE_ID
     text = message["text"].lower()
     sender = message["sender_type"]
-
     user_id = message["sender_id"]
 
     if user_id == USER_ID:
@@ -51,7 +50,7 @@ def process_message(message):
             send_message("sup")
 
         if "do math" in text:
-            print("YYYYYYY")
+
             expression = text[len("Do math"):].strip()
             print(f"Evaluating expression: {expression}")
 
@@ -65,23 +64,6 @@ def process_message(message):
             send_message("Get some good sleep Kitten!")
 
     LAST_MESSAGE_ID = message["id"]
-
-
-# def solution(expr):
-#     print(expr)
-#     return bool(re.fullmatch(r"[\d+\-*/.() ]+", expr))
-
-
-def get_meme(api_key):
-    url = "https://api.giphy.com/v1/gifs/random"
-    params = {"api_key": api_key, "tag": "meme", "rating": "g"}
-    response = requests.get(url, params=params)
-
-    print("Response::::", response.json()['data']['images']['original']['url'])
-    if response.status_code == 200:
-        return response.json()['data']['images']['original']['url']
-    else:
-        return None
 
 
 def main():
