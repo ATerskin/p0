@@ -12,7 +12,6 @@
    ```
    - Access token can be found in the link above ^
 4. Create a .env file with this template:
-   - 
    ```bash
    BOT_ID=""
    GROUP_ID="" 
