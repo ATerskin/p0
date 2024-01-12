@@ -47,9 +47,3 @@ pip install -r requirements.txt
 # STEP 4:
 # run the bot.py program
 python3 bot.py
-
-```bash
-BOT_ID=""
-GROUP_ID="98324520" # our GroupMe chat id
-ACCESS_TOKEN="" 
-```
